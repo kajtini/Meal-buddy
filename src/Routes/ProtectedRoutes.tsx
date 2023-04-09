@@ -1,10 +1,13 @@
 import { Navigate, Outlet } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
+import { useContext } from "react";
 
 const ProtectedRoutes = () => {
-  // if user signed in true other false
-  const auth = true;
+  const { user } = useContext(UserContext);
 
-  return auth ? <Outlet /> : <Navigate to="/signUp" />;
+  const auth = user ? true : false;
+
+  return auth ? <Outlet /> : <Navigate to="/signIn" />;
 };
 
 export default ProtectedRoutes;

@@ -4,9 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#282A2C",
-        secondary: "#343839",
+        primary: "#1f2122",
+        secondary: "#242627",
         accent: "#F54749",
+        "accent-dark": "#f32326",
       },
       fontFamily: {
         primary: ["Roboto", "sans-serif"],

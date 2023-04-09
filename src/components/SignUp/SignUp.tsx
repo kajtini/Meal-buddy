@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { auth } from "../../config/firebase";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 
 const SignUp = () => {
@@ -12,7 +12,7 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [photoURL, setPhotoURL] = useState("");
 
-  const { user, logIn, logOut } = useContext(UserContext);
+  const { user, logIn } = useContext(UserContext);
 
   const canSignUp = email && password && name;
 
@@ -61,8 +61,6 @@ const SignUp = () => {
       console.error(`Error while signing up: ${error}`);
     }
   };
-
-  console.log(user);
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

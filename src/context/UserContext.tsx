@@ -1,4 +1,6 @@
-import { ReactNode, createContext, useState } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { ReactNode, createContext, useState, useEffect } from "react";
+import { auth } from "../config/firebase";
 
 interface UserContextProviderProps {
   children: ReactNode;
@@ -29,6 +31,19 @@ export const UserContextProvider = ({ children }: UserContextProviderProps) => {
   const logOut = () => {
     setUser(null);
   };
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { displayName, email, photoURL, uid } = user;
+        if (displayName && email && photoURL && uid) {
+          logIn({ displayName, email, photoURL, uid });
+        }
+      } else {
+        logOut();
+      }
+    });
+  }, []);
 
   return (
     <UserContext.Provider value={{ user, logIn, logOut }}>
