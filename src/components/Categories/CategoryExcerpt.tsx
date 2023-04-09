@@ -1,5 +1,5 @@
-import { Category } from "../../hooks/useCategories";
 import { Link } from "react-router-dom";
+import { Category } from "../../types/types";
 
 interface CategoryExcerptProps {
   category: Category;

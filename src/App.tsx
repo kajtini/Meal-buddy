@@ -7,7 +7,7 @@ import HomePage from "./components/Home/HomePage";
 import RedirectionRoute from "./Routes/RedirectionRoute";
 import Header from "./components/Header/Header";
 import Categories from "./components/Categories/Categories";
-import CategoryRecipes from "./components/Categories/CategoryRecipes";
+import CategoryRecipes from "./components/Categories/CategoryMeals";
 
 function App() {
   return (

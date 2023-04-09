@@ -1,4 +1,4 @@
-import { Category } from "../../hooks/useCategories";
+import { Category } from "../../types/types";
 import CategoryExcerpt from "./CategoryExcerpt";
 
 interface CategoriesListProps {

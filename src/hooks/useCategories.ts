@@ -1,12 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-
-export interface Category {
-  idCategory: string;
-  strCategory: string;
-  strCategoryDescription: string;
-  strCategoryThumb: string;
-}
+import { Category } from "../types/types";
 
 export const useCategories = () => {
   const [categories, setCategories] = useState<Category[] | null>(null);
