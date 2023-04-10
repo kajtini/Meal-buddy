@@ -23,6 +23,11 @@ const Header = () => {
       title: "Categories",
       path: "/categories",
     },
+    {
+      id: 2,
+      title: "Recipes",
+      path: "/recipes",
+    },
   ];
 
   const signOut = async () => {

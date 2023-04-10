@@ -2,12 +2,13 @@ import { Routes, Route } from "react-router-dom";
 import SignUp from "./components/SignUp/SignUp";
 import SignIn from "./components/SignIn/SignIn";
 import ProtectedRoutes from "./Routes/ProtectedRoutes";
-import { UserContext, UserContextProvider } from "./context/UserContext";
+import { UserContextProvider } from "./context/UserContext";
 import HomePage from "./components/Home/HomePage";
 import RedirectionRoute from "./Routes/RedirectionRoute";
 import Header from "./components/Header/Header";
 import Categories from "./components/Categories/Categories";
-import CategoryRecipes from "./components/Categories/CategoryMeals";
+import CategoryRecipes from "./components/Categories/CategoryMeals/CategoryMeals";
+import Recipe from "./components/Recipe/Recipe";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/categories" element={<Categories />} />
               <Route path="/categories/:id" element={<CategoryRecipes />} />
+              <Route path="/recipes/:id" element={<Recipe />} />
             </Route>
           </Route>
 

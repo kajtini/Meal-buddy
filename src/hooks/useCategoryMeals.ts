@@ -9,7 +9,7 @@ export const useCategoryMeals = (categoryId: string) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const getCategoryRecipes = async () => {
+    const fetchCategoryRecipes = async () => {
       try {
         setLoading(true);
         const res = await axios.get(
@@ -24,7 +24,7 @@ export const useCategoryMeals = (categoryId: string) => {
       }
     };
 
-    getCategoryRecipes();
+    fetchCategoryRecipes();
   }, []);
 
   return { categoryMeals, loading };

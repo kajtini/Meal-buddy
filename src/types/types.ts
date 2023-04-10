@@ -10,3 +10,13 @@ export interface CategoryMeal {
   strMeal: string;
   strMealThumb: string;
 }
+
+export interface MealRecipe extends CategoryMeal {
+  strArea: string;
+  strCategory: string;
+  strInstructions: string;
+  strSource: string;
+  strYoutube: string;
+  ingredients: string[];
+  measures: string[];
+}
